@@ -34,12 +34,14 @@ function reducer(state, action) {
         for (let j = 0; j < state.coins.length; j++) {
           if (state.holdings[i].Cname === state.coins[j].name) {
             state.holdings[i].cp = (Number(state.holdings[i].currQ) * Number(state.coins[j]["current_price"])).toFixed(3);
-            valueUpdate += state.holdings[i].cp;
+            //console.log([i, state.holdings[i].cp])
+            valueUpdate += Number(state.holdings[i].cp);
             state.holdings[i].pl = (((state.holdings[i].cp - state.holdings[i].tp) / state.holdings[i].tp) * 100).toFixed(3);
             break;
           }
         }
       }
+      //console.log(valueUpdate);
       return { ...state, value: valueUpdate };
 
     case ACTIONS.NAME:
