@@ -1,5 +1,6 @@
 # Crypto Trading Simulator
- 
+## Deployed Here:  [Crypto-Trade-App](https://crypto-trade-app.netlify.app/)
+
 We will be making a fully functional trading simulator. You should be able to:
 - See prices of top currencies
 - Buy crypto assets
