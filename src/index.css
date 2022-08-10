@@ -197,7 +197,7 @@ body {
 }
 
 .buy_box {
-    width: 300px;
+    min-width: 300px;
     min-height: 270px;
     position: absolute;
     z-index: 2;
@@ -263,4 +263,13 @@ button {
     background-color: black;
     color: white;
     font-weight: bolder;
+}
+
+.max-bttn {
+    margin-top: 15px;
+    padding: 3px 15px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
 }

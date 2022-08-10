@@ -294,6 +294,7 @@ function App() {
                   type="number"
                   name=""
                   id="quantity"
+                  value={state.quantity}
                   min={0}
                   max={`${act === 'Buy' ? (state.wallet / state.boxPrice).toFixed(3) : stockHold}`}
                   onChange={(e) => {
@@ -303,7 +304,15 @@ function App() {
                     });
                   }}
                 />
-                <p>Max {act}: {act === 'Buy' ? (state.wallet / state.boxPrice).toFixed(3) : stockHold}</p>
+                <br />
+                <button className="max-bttn" onClick={(e)=>{
+                  let maxQuantityVal = act === 'Buy' ? (state.wallet / state.boxPrice).toFixed(3) : stockHold;
+                  dispatch({
+                    type: ACTIONS.QUANTITY,
+                    payLoad: maxQuantityVal,
+                  });
+                }}>
+                  Max {act}: {act === 'Buy' ? (state.wallet / state.boxPrice).toFixed(3) : stockHold}</button>
               </div>
               <p>You will {act === 'Buy' ? 'be CHARGED' : 'RECEIVE'} $ {(state.quantity * state.boxPrice).toFixed(3)}</p>
               <div className="radio_button">
